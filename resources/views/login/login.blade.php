@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
     @vite([  // aqui se llama los archivos CSS del proyecto
     'resources/css/login.css', 
-    'resources/img/clinica.webp',
   
    ])
    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
@@ -26,7 +26,10 @@
                 class="img-fluid" alt="Sample image">
             </div>
             <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
-              <form>
+              <form action="http://localhost/projects/Clinica_Salud_Center/public/" method="POST">
+
+                @csrf <!-- este es un complemento de laravel por seguridad--->
+
                 <div class="d-flex flex-row align-items-center justify-content-center justify-content-lg-start">
                   <p class="lead fw-normal mb-0 me-3">CLINICA SALUD CENTER</p>
                   
@@ -60,11 +63,25 @@
                   </div>
                   <!--<a href="#!" class="text-body">Restablecer password?</a>--->
                 </div>
-      
-                <div class="text-center text-lg-start mt-4 pt-2">
-                  <button type="button" class="btn btn-primary btn-lg"
-                    style="padding-left: 2.5rem; padding-right: 2.5rem;">Ingresar</button>
-                </div>
+    
+                <a href="home">
+                  <button type="submit" class="primary-btn" >
+                    Ingresar
+                    @if(session()->has('error'))  <!-- Inio : codigo alerta para validad con el controlador LoginController-->
+                      <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+                      <script>
+                        Swal.fire({
+                        icon: 'error',
+                        title: 'Error',
+                        text: "{{session('error')}}",
+                        confirmButtonText: 'Aceptar',
+                        
+                        
+                      });
+                      </script>
+                     @endif    <!-- FIN: codigo alerta para validad con el controlador LoginController-->
+                  </button>
+                </a>
       
               </form>
             </div>
@@ -99,3 +116,8 @@
     
 </body>
 </html>
+
+@section('js')
+
+
+@endsection

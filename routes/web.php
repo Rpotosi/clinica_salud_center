@@ -1,7 +1,12 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\HomeController;
+
+
+use Illuminate\Support\Facades\Route;
+
+
 
 
 /*
@@ -15,7 +20,7 @@ use App\Http\Controllers\LoginController;
 |
 */
 
-Route::controller(LoginController::class)->group(function(){   //asi se define un grupo de rutas para login para el controlador login
-    Route::get('/', 'show')->name('login'); // la ruta get es para mostrar la vista de login
-    Route::post('/', 'login')->name('login');// la ruta post es para acceder al metodo del controlador para autenticarse
-});
+Route::get('/', [LoginController::class, 'show'])->name('login');
+Route::post('/', [LoginController::class, 'login']);
+
+Route::get('home', HomeController::class);

@@ -42,14 +42,14 @@
                 <!-- Email input -->
                 <div class="form-outline mb-4">
                   <input type="email" id="form3Example3" class="form-control form-control-lg"
-                    placeholder="Ingrese su correo" />
+                    placeholder="Ingrese su correo" name="username" />
                   <label class="form-label" for="form3Example3">Email</label>
                 </div>
       
                 <!-- Password input -->
                 <div class="form-outline mb-3">
                   <input type="password" id="form3Example4" class="form-control form-control-lg"
-                    placeholder="Ingrese su contraseña" />
+                    placeholder="Ingrese su contraseña" name="password"/>
                   <label class="form-label" for="form3Example4">Password</label>
                 </div>
       
@@ -75,8 +75,8 @@
                         title: 'Error',
                         text: "{{session('error')}}",
                         confirmButtonText: 'Aceptar',
-                        
-                        
+                        confirmButtonColor: '#1590F7',
+                        confirmButtonTextColor: '#fff', 
                       });
                       </script>
                      @endif    <!-- FIN: codigo alerta para validad con el controlador LoginController-->

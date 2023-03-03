@@ -4,6 +4,8 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\LogoutController;
+use App\Http\Controllers\OrdersController;
+
 
 
 use Illuminate\Support\Facades\Route;
@@ -22,4 +24,16 @@ Route::controller(RegisterController::class)->group(function(){
     Route::post('register/show', 'register');
 }); 
 
-Route::get('home', HomeController::class);
+Route::controller(OrdersController::class)->group(function(){
+    Route::get('orders/show', 'show');
+    Route::get('orders/create', 'create')->name('orders.create');
+    Route::post('orders/create', 'store')->name('orders.create');
+    
+}); 
+
+Route::controller(HomeController::class)->group(function(){
+    Route::get('home/show', 'show');
+    
+    
+}); 
+

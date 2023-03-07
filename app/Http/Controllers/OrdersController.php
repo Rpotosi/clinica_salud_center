@@ -24,7 +24,7 @@ class OrdersController extends Controller
      */
     public function create()
     {
-        return view('orders.orders-create');
+        return view("orders.orders-create");
     }
 
     /**
@@ -35,7 +35,26 @@ class OrdersController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $order=new Order();
+
+        $order->tipo_documento = $request->tipo_documento;
+        $order->cedula = $request->cedula;
+        $order->nombres = $request->nombres;
+        $order->apellidos = $request->apellidos;
+        $order->fecha = $request->fecha;
+        $order->tipo_examen = $request->tipo_examen;
+        $order->examen_enfasis = $request->examen_enfasis;
+        $order->observaciones = $request->observaciones;
+        $order->orden_fisica = $request->orden_fisica;
+
+        $order->save();
+
+        return response()->json([ // envia un json (texto) con los siguiente atributos success y message
+            'success' => true, 
+            'message' => 'Orden creada con éxito'
+        ]);
+
+
     }
 
     /**

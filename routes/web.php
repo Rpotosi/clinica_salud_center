@@ -5,6 +5,7 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\LogoutController;
 use App\Http\Controllers\OrdersController;
+use App\Http\Controllers\ResultadosController;
 
 
 
@@ -36,4 +37,16 @@ Route::controller(HomeController::class)->group(function(){
     
     
 }); 
+
+Route::controller(ResultadosController::class)->group(function(){
+    Route::get('resultados/show', 'show');
+    Route::get('resultados/create', 'create')->name('resultados.create');
+    Route::post('resultados/create', 'store')->name('resultados.create');
+    
+}); 
+
+Route::controller(LogoutController::class)->group(function(){  // creación de RUTA logout //
+    Route::get('logout', 'logout');
+}); 
+
 

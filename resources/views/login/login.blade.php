@@ -64,7 +64,7 @@
                   <!--<a href="#!" class="text-body">Restablecer password?</a>--->
                 </div>
     
-                <a href="home">
+                <a href="home/show">
                   <button type="submit" class="btn btn-primary" >
                     Ingresar
                     @if(session()->has('error'))  <!-- Inio : codigo alerta para validad con el controlador LoginController-->

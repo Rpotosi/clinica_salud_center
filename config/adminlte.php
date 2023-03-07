@@ -334,7 +334,7 @@ return [
             'submenu' => [
                 [
                     'text' => 'Consultar Resultado',
-                    'url'  => '#',
+                    'url'  => 'resultados/show',
                 ],
               
                
@@ -343,7 +343,7 @@ return [
 
         [
             'text' => 'Cerrar',
-            'url'  => 'admin/settings',
+            'url'  => '/logout',
             'icon_color' => 'red',
         ],
      

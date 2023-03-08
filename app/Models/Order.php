@@ -19,12 +19,21 @@ class Order extends Model
         'tipo_examen',
         'examen_enfasis',
         'observaciones',
+        'orden_fisica',
+        'id_files_orden',
+        'id_files_resultados'
         
+
     ];
 
-    public function responsable()
+    public function id_files_orden()
     {
-        return $this->belongsTo('App\Models\Empleado', 'responsable');
+        return $this->belongsTo('App\Models\FilesOrden', 'id_files_orden');
+    }
+
+    public function id_files_resultados()
+    {
+        return $this->belongsTo('App\Models\FilesResultado', 'id_files_resultados');
     }
 }
 

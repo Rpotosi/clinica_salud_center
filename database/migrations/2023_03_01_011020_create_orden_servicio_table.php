@@ -22,11 +22,11 @@ return new class extends Migration
             $table->string('apellidos', 50);
             $table->date('fecha');
             $table->string('tipo_examen', 50);
-            $table->string('examen_enfasis', 255);
-            $table->string('observaciones', 255);
-            $table->string('orden_fisica', 50);
-            $table->bigInteger('id_files_orden')->index('id_files_orden');
-            $table->bigInteger('id_files_resultados')->index('id_files_resultados');
+            $table->string('examen_enfasis', 255)->nullable();
+            $table->string('observaciones', 255)->nullable();
+            $table->string('orden_fisica', 50)->nullable();
+            $table->bigInteger('id_files_orden')->index('id_files_orden')->nullable();
+            $table->bigInteger('id_files_resultados')->index('id_files_resultados')->nullable();
         });
     }
 

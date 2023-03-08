@@ -26,7 +26,7 @@ Route::controller(RegisterController::class)->group(function(){
 }); 
 
 Route::controller(OrdersController::class)->group(function(){
-    Route::get('orders/show', 'show');
+    Route::get('orders/show', 'show')->name('orders.show');
     Route::get('orders/create', 'create')->name('orders.create');
     Route::post('orders/create', 'store')->name('orders.create');
     

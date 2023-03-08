@@ -22,7 +22,6 @@
       </label>
       <input type="date" class="form-control" id="fecha_atencion" name="fecha" required/> 
     </div>
-    
     <div class="col-md-4">
     </div>
     <div class="col-md-4">
@@ -43,7 +42,7 @@
         <label for="cedula" class="form-label">
           Cedula
         </label>
-        <input type="text" class="form-control" id="cargo" placeholder="" name="cedula" required/>
+        <input type="text" class="form-control" id="cedula" placeholder="" name="cedula" required/>
       </div>
     <div class="col-md-4">
       <label for="nombres" class="form-label">
@@ -111,10 +110,11 @@
         </label>
         <textarea type="text" class="form-control" rows="5" id="cargo" placeholder="" name="observaciones" required></textarea>
       </div>
-
-      <div class="col-12"></div>
+      <div class="col-12">
+        <label for=""></label>
+      </div>
       <div class="box-footer">
-        <button type="submit" class="btn btn-primary">Guardar</button>
+        <button type="submit" class="btn btn-primary" onclick="confirmSubmit(event)">Guardar</button>
     </div>
   </form>
 </div>
@@ -123,9 +123,13 @@
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.1.2/dist/sweetalert2.all.min.js"></script>
 <script>
   function confirmSubmit(event) {
-  event.preventDefault(); // Prevenimos el envío del formulario por defecto
-  // Enviamos el formulario mediante AJAX
-  $.ajax({
+    // validation empy box of form 
+    var form = document.getElementById("create-form");
+  if (form.checkValidity()) {
+    // validation empy box of form 
+  
+
+    $.ajax({
       url: $('#create-form').attr('action'),
       type: 'POST',
       data: $('#create-form').serialize(),
@@ -155,14 +159,16 @@
           }
       }
   });
+
+  // validation empy box of form   
+  } else {
+    alert("Por favor complete todos los campos requeridos");
+  }
+  // validation empy box of form  
+
+  event.preventDefault(); // Prevenimos el envío del formulario por defecto
+  // Enviamos el formulario mediante AJAX
+  
 }
 </script> <!--aqui diseñamos nuestro formulario orden-->
-@stop
-
-@section('css')
-    <link rel="stylesheet" href="/css/admin_custom.css">
-@stop
-
-@section('js')
-    <script> console.log('Hi!'); </script>
 @stop

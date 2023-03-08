@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('orden_servicio', function (Blueprint $table) {
             $table->comment('');
             $table->bigInteger('id_orden', true);
-            $table->string('tipo_documento', 15);
+            $table->string('tipo_documento', 50);
             $table->bigInteger('cedula');
             $table->string('nombres', 50);
             $table->string('apellidos', 50);

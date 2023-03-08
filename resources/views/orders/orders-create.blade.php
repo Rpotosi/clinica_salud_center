@@ -112,10 +112,9 @@
         <textarea type="text" class="form-control" rows="5" id="cargo" placeholder="" name="observaciones" required></textarea>
       </div>
 
-    <div class="col-12"></div>
-    <div class="col-12">
-      <button id="guardar" type="button" class="btn btn-success" onclick="confirmSubmit(event)">
-        Guardar
+      <div class="col-12"></div>
+      <div class="box-footer">
+        <button type="submit" class="btn btn-primary">Guardar</button>
     </div>
   </form>
 </div>

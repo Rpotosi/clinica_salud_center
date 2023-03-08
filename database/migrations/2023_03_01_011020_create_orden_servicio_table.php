@@ -27,6 +27,8 @@ return new class extends Migration
             $table->string('orden_fisica', 50)->nullable();
             $table->bigInteger('id_files_orden')->index('id_files_orden')->nullable();
             $table->bigInteger('id_files_resultados')->index('id_files_resultados')->nullable();
+            $table->dateTime('updated_at')->nullable();
+            $table->dateTime('created_at')->nullable();
         });
     }
 

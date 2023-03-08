@@ -18,6 +18,8 @@ return new class extends Migration
             $table->bigInteger('id_files_resultados', true);
             $table->string('nombre')->nullable();
             $table->string('archivo')->nullable();
+            $table->dateTime('updated_at')->nullable();
+            $table->dateTime('created_at')->nullable();
         });
     }
 

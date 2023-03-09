@@ -51,7 +51,7 @@ html {
   font-family: sans-serif;
   line-height: 1.15;
   -webkit-text-size-adjust: 100%;
-  -webkit-tap-highlight-color: #ffc107;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
 article, aside, figcaption, figure, footer, header, hgroup, main, nav, section {
@@ -10641,7 +10641,6 @@ a.text-dark:hover, a.text-dark:focus {
   --danger: #e74c3c;
   --light: #f8f9fa;
   --dark: #343a40;
-  --dod: #0d6efd;
 }
 
 .animation__shake {

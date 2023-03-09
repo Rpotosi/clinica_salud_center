@@ -63,7 +63,7 @@ return [
     |
     */
 
-    'logo' => '<b>Clinica</b> Salud Center',  //titulo de Navbar
+    'logo' => '<b>Admin</b>LTE',
     'logo_img' => 'vendor/adminlte/dist/img/AdminLTELogo.png',
     'logo_img_class' => 'brand-image img-circle elevation-3',
     'logo_img_xl' => null,
@@ -253,7 +253,7 @@ return [
     */
 
     'use_route_url' => false,
-    'dashboard_url' => 'home/show',  // retorna a home/show
+    'dashboard_url' => 'home',
     'logout_url' => 'logout',
     'login_url' => 'login',
     'register_url' => 'register',
@@ -301,52 +301,88 @@ return [
             'topnav_right' => true,
         ],
 
-        // Sidebar items:  // aqui se cambia los nombre del menu de navegación del navbar
-    
+        // Sidebar items:
         [
-            'text' => 'Home',
-            'url'  => 'home/show',
-            'icon' => 'fas fa-fw fa-home',
-            'icon_color' => 'white',
+            'type' => 'sidebar-menu-search',
+            'text' => 'search',
         ],
-     
         [
-            'text'    => 'Ordenes de Servicio',
-            'icon'    => 'fas fa-fw fa-user',
-            'icon_color' => 'white',
+            'text' => 'blog',
+            'url'  => 'admin/blog',
+            'can'  => 'manage-blog',
+        ],
+        [
+            'text'        => 'pages',
+            'url'         => 'admin/pages',
+            'icon'        => 'far fa-fw fa-file',
+            'label'       => 4,
+            'label_color' => 'success',
+        ],
+        ['header' => 'account_settings'],
+        [
+            'text' => 'profile',
+            'url'  => 'admin/settings',
+            'icon' => 'fas fa-fw fa-user',
+        ],
+        [
+            'text' => 'change_password',
+            'url'  => 'admin/settings',
+            'icon' => 'fas fa-fw fa-lock',
+        ],
+        [
+            'text'    => 'multilevel',
+            'icon'    => 'fas fa-fw fa-share',
             'submenu' => [
                 [
-                    'text' => 'Crear Orden',
-                    'url'  => 'orders/create',
+                    'text' => 'level_one',
+                    'url'  => '#',
                 ],
                 [
-                    'text'    => 'Consultar Orden',
-                    'url'     => 'orders/show',
-                    
+                    'text'    => 'level_one',
+                    'url'     => '#',
+                    'submenu' => [
+                        [
+                            'text' => 'level_two',
+                            'url'  => '#',
+                        ],
+                        [
+                            'text'    => 'level_two',
+                            'url'     => '#',
+                            'submenu' => [
+                                [
+                                    'text' => 'level_three',
+                                    'url'  => '#',
+                                ],
+                                [
+                                    'text' => 'level_three',
+                                    'url'  => '#',
+                                ],
+                            ],
+                        ],
+                    ],
                 ],
-               
-            ],
-        ],
-        [
-            'text'    => 'Resultados',
-            'icon'    => 'fas fa-fw fa-folder',
-            'icon_color' => 'white',
-            'submenu' => [
                 [
-                    'text' => 'Consultar Resultado',
-                    'url'  => 'resultados/show',
+                    'text' => 'level_one',
+                    'url'  => '#',
                 ],
-              
-               
             ],
         ],
-
+        ['header' => 'labels'],
         [
-            'text' => 'Cerrar',
-            'url'  => '/logout',
+            'text'       => 'important',
             'icon_color' => 'red',
+            'url'        => '#',
         ],
-     
+        [
+            'text'       => 'warning',
+            'icon_color' => 'yellow',
+            'url'        => '#',
+        ],
+        [
+            'text'       => 'information',
+            'icon_color' => 'cyan',
+            'url'        => '#',
+        ],
     ],
 
     /*

@@ -5,6 +5,39 @@
 @section('content_header')
     <h1>Crear Orden Servicio</h1>
     <br>
+    <script>
+      function ocultarCampos() {
+          var ordenFisica = document.getElementById("orden_fisica");
+          var Enfasis = document.getElementById("Examen_enfasis");
+          var enfasis = document.getElementById("examen_enfasis");
+          var observaciones = document.getElementById("observaciones");
+          var Observaciones = document.getElementById("Observaciones");
+          var File = document.getElementById("File");
+          var file = document.getElementById("file");
+           
+    
+          
+          if (ordenFisica.value == "si") {
+              enfasis.style.display = "none";
+              Enfasis.style.display = "none";
+              observaciones.style.display = "none";
+              Observaciones.style.display = "none";
+              File.style.display = "block";
+              file.style.display = "block";
+          } else {
+              enfasis.style.display = "block";
+              Enfasis.style.display = "block";
+              observaciones.style.display = "block";
+              Observaciones.style.display = "block";
+              File.style.display = "none";
+              file.style.display = "none";
+              
+
+          }
+      }
+
+
+  </script>
 @stop
 
 @section('content')
@@ -81,34 +114,41 @@
         <option>Otros</option>
       </select>
     </div>
-    <div class="col-md-4">
+    <div class="col-md-4 ">
         <label for="orden_fisica" class="form-label">
           Tiene Orden Fisica?
         </label>
         <br>
-        <select id="orden_fisica" class="custom-select" name="orden_fisica" required>
-          <option></option>
-          <option>Sí</option>
-          <option>No</option>
-        </select>
+        <select id="orden_fisica" class=" custom-select" onchange="ocultarCampos()">
+          <option selected></option>
+          <option value="no">No</option>
+          <option value="si">Sí</option>
+      </select>
       </div>
 
+      <div class="form-group col-md-4" >
+        <label for="file" id="File">Cargar archivo</label>
+        <br>
+        <input type="file" id="file" name="file-upload">
+      </div>
+      
+
       <div class="col-md-4">
-        <label for="examen_enfasis" class="form-label">
+        <label for="examen_enfasis" id="Examen_enfasis" class="form-label">
           Exámen de enfasis
         </label>
-        <br>
-        <select id="examen_enfasis" class="custom-select" name="examen_enfasis" required>
-          <option selected>Sin asignar</option>
+        <select id="examen_enfasis" class="custom-select" name="examen_enfasis">
+          <option selected></option>
           <option>Exámen 1</option>
           <option>Exámen 2</option>
         </select>
       </div>
-      <div class="col-6">
-        <label for="observaciones" class="form-label">
+      
+      <div class="col-4">
+        <label for="observaciones" id="Observaciones" class="form-label">
           Observaciones
         </label>
-        <textarea type="text" class="form-control" rows="5" id="cargo" placeholder="" name="observaciones" required></textarea>
+        <textarea type="text" class="form-control" rows="5" id="observaciones" placeholder="" name="observaciones"></textarea>
       </div>
       <div class="col-12">
         <label for=""></label>

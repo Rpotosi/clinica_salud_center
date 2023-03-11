@@ -33,7 +33,7 @@ Route::controller(OrdersController::class)->group(function(){
 }); 
 
 Route::controller(HomeController::class)->group(function(){
-    Route::get('home/show', 'show');
+    Route::get('home/show', 'show')->name('home.show');;
     
     
 }); 
